@@ -92,3 +92,20 @@ describe "#is_not_empty?" do
   end
 
 end
+
+describe "#first_element" do
+
+  organizer = WordsOrganizer.new
+
+  it "It should return first element of WordsOrganizer words array" do
+    organizer.words.push("javascript")
+    organizer.words.push("ruby")
+    expect(organizer.first_element).to eq("javascript")
+  end
+
+  it "It should return nil if WordsOrganizer words array is empty" do
+    organizer.words.clear
+    expect(organizer.first_element).to eq(nil)
+  end
+
+end

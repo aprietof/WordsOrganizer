@@ -37,5 +37,12 @@ class WordsOrganizer
     !self.is_empty?
   end
 
+  # It should return first element of WordsOrganizer words array
+  # it should return nil if WordsOrganizer words array is empty
+  def first_element
+    return nil if self.is_empty?
+    @words[0]
+  end
+
 
 end
