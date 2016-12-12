@@ -54,5 +54,12 @@ class WordsOrganizer
     element_removed
   end
 
+  # It should remove first elemnt of array
+  # it should return removed element
+  # it should return nil if array is empty
+  def extract_first
+    self.remove_at(0)
+  end
+
 
 end
