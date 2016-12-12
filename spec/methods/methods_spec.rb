@@ -53,3 +53,42 @@ describe "#add" do
   end
 
 end
+
+describe "#is_empty?" do
+
+  organizer = WordsOrganizer.new
+
+  it "It should check if WordsOrganizer words array is empty" do
+    organizer.words.clear
+    expect(organizer.is_empty?).to eq(true)
+    organizer.words.push('javascript')
+    expect(organizer.is_empty?).to eq(false)
+  end
+
+  it "It should return a boolean" do
+    organizer.words.clear
+    expect(organizer.is_empty?).to be_a(TrueClass)
+    organizer.words.push('ruby')
+    expect(organizer.is_empty?).to be_a(FalseClass)
+  end
+
+end
+
+describe "#is_not_empty?" do
+
+  organizer = WordsOrganizer.new
+
+  it "It should check if WordsOrganizer words array is not empty" do
+    expect(organizer.is_not_empty?).to eq(false)
+    organizer.words.push('javascript')
+    expect(organizer.is_not_empty?).to eq(true)
+  end
+
+  it "It should return a boolean" do
+    organizer.words.clear
+    expect(organizer.is_not_empty?).to be_a(FalseClass)
+    organizer.words.push('ruby')
+    expect(organizer.is_not_empty?).to be_a(TrueClass)
+  end
+
+end

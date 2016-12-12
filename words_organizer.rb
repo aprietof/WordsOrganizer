@@ -25,5 +25,17 @@ class WordsOrganizer
     @words
   end
 
+  # It should check if WordsOrganizer words array is empty
+  # It should return a boolean
+  def is_empty?
+    self.len == 0
+  end
+
+  # It should check if WordsOrganizer words array is not empty
+  # It should return a boolean
+  def is_not_empty?
+    !self.is_empty?
+  end
+
 
 end
