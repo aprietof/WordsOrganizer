@@ -109,3 +109,27 @@ describe "#first_element" do
   end
 
 end
+
+describe "#remove_at" do
+
+  organizer = WordsOrganizer.new
+
+  it "It should remove element at desired index from WordsOrganizer words array" do
+    organizer.words.push("javascript")
+    organizer.words.push("ruby")
+    organizer.words.push("google")
+    organizer.words.push("java")
+    organizer.remove_at(0)
+    expect(organizer.words).to eq(["ruby", "google", "java"])
+  end
+
+  it "It should return removed element" do
+    expect(organizer.remove_at(2)).to eq("java")
+  end
+
+  it "It should return nil if WordsOrganizer words array is empty" do
+    organizer.words.clear
+    expect(organizer.remove_at(2)).to eq(nil)
+  end
+
+end

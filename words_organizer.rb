@@ -44,5 +44,15 @@ class WordsOrganizer
     @words[0]
   end
 
+  # It should remove element at desired index from WordsOrganizer words array
+  # It should return removed element
+  # It should return nil if WordsOrganizer words array is empty
+  def remove_at(index)
+    return nil if self.is_empty?
+    element_removed = @words[index]
+    @words[index..index] = %w()
+    element_removed
+  end
+
 
 end
