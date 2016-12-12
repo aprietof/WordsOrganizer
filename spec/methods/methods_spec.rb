@@ -154,3 +154,60 @@ describe "#extract_first" do
   end
 
 end
+
+describe "#sort_words" do
+
+  organizer = WordsOrganizer.new
+
+  it "It should return an array" do
+    organizer.add('endai')
+    expect(organizer.sort_words).to be_a(Array)
+  end
+
+  it "It should return same words array if array's size < 2 elements" do
+    expect(organizer.sort_words).to eq(['endai'])
+  end
+
+  it "It should sort words alphabetically" do
+    organizer.words.clear
+    organizer.add('cba')
+    organizer.add('bca')
+    organizer.add('aba')
+    organizer.add('acbc')
+    organizer.add('acba')
+    expect(organizer.sort_words).to eq([
+      'aba',
+      'acba',
+      'acbc',
+      'bca',
+      'cba'
+    ])
+
+    organizer.words.clear
+    organizer.add('kavxpfequl')
+    organizer.add('ynsxcrxout')
+    organizer.add('jrhmnjyvpb')
+    organizer.add('kefrxznjsn')
+    organizer.add('juaypzwoow')
+    organizer.add('kaszncrqdc')
+    organizer.add('tlvszaghul')
+    organizer.add('owfjrozmdf')
+    organizer.add('qcwhbmviaj')
+    organizer.add('dakguurrhi')
+
+
+    expect(organizer.sort_words).to eq([
+      "dakguurrhi",
+      "jrhmnjyvpb",
+      "juaypzwoow",
+      "kaszncrqdc",
+      "kavxpfequl",
+      "kefrxznjsn",
+      "owfjrozmdf",
+      "qcwhbmviaj",
+      "tlvszaghul",
+      "ynsxcrxout"
+    ])
+  end
+  
+end
