@@ -27,3 +27,29 @@ describe "#len" do
   end
 
 end
+
+describe "#add" do
+
+  organizer = WordsOrganizer.new
+
+  it "It should add a new element to WordsOrganizer words array" do
+    organizer.add('more')
+    organizer.add('another')
+    expect(organizer.words.length).to eq(2)
+    organizer.add('ruby')
+    expect(organizer.words.length).to eq(3)
+  end
+
+  it "It should add a new element to last index of WordsOrganizer words array" do
+    organizer.add('javascript')
+    expect(organizer.words.last).to eq('javascript')
+  end
+
+  it "It should return modified WordsOrganizer words array" do
+    organizer.words.clear
+    organizer.add('java')
+    expect(organizer.add('google')).to be_a(Array)
+    expect(organizer.words).to eq(['java', 'google'])
+  end
+
+end

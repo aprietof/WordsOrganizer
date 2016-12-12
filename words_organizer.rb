@@ -17,5 +17,13 @@ class WordsOrganizer
     length
   end
 
+  # It should add a new element to WordsOrganizer words array
+  # It should add a new element to last index of WordsOrganizer words array
+  # It should return modified WordsOrganizer words array
+  def add(item)
+    @words[self.len] = item
+    @words
+  end
+
 
 end
