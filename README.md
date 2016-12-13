@@ -12,7 +12,7 @@
 - Run `rake console` and a pry console will be loaded with **`WordsOrganizer`** object loaded and ready to be used.
 
 ```ruby
-organizer = WordsOrganizer.new ['zrb','aba', 'cba', 'bca']
+organizer = WordsOrganizer.new(['zrb','aba', 'cba', 'bca'])
 
 organizer.sort_words #=> ['aba', 'bca', 'cba', 'zrb']
 ```
